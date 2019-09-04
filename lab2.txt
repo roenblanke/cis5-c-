@@ -1,0 +1,121 @@
+//r0d0gg
+//cis5
+//3-9-2019
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	cout << "welcome to number games!" << "\n";
+
+	//Project A: Write a program that accepts three numbers and
+	//prints the largest and smallest of the three numbers
+	//without using an “if” or “switch” statement.
+
+	cout << "First game ! " << "\n";
+
+	int userInput[3];
+	cout << "Please enter the first of three numbers" << "\n";
+	cin >> userInput[0];
+
+	cout << "Please enter the second of three numbers" << "\n";
+	cin >> userInput[1];
+
+	cout << "Please enter the third of three numbers" << "\n";
+	cin >> userInput[2];
+
+	int n = sizeof(userInput) / sizeof(userInput[0]);
+
+	sort(userInput, userInput + n);
+
+	cout << "The smallest of the three numbers is " << userInput[0] << "\n";
+	cout << "The largest of the three numbers is " << userInput[2] << "\n";
+
+	system("PAUSE");
+
+	//Project B: Write a program that accepts a radius and
+	//calculates the volume of a sphere. Use this formula: 
+	//(v = ¾ x PI x r^3).
+	cout << "Second game ! " << "\n";
+
+	double r, pi, vol;
+	pi = 3.14159;
+
+	cout << "Please enter a radius" << "\n";
+	cin >> r;
+
+	vol = .75 * pi * r * r * r;
+
+	cout << "The Volume of a sphere with radius " << r << " is " << vol << "\n";
+
+	system("PAUSE");
+
+	//Project C: Write a program that accepts the measurements
+	//of two rectangular cubes, calculates their volumes, and
+	//displays the different in cubic feet. Hint: you may need
+	//to use the absolute value function for this one.
+	cout << "Third game!" << "\n";
+
+	double rectL[2], rectW[2], rectH[2], rectV[2], rectDiff;
+
+
+	cout << "Please enter a length for rectangle #1" << "\n";
+	cin >> rectL[0];
+
+	cout << "Please enter a width for rectangle #1" << "\n";
+	cin >> rectW[0];
+
+	cout << "Please enter a height for rectangle #1" << "\n";
+	cin >> rectH[0];
+
+	rectV[0] = rectL[0] * rectW[0] * rectH[0];
+
+
+	cout << "Please enter a length for rectangle #2" << "\n";
+	cin >> rectL[1];
+
+	cout << "Please enter a width for rectangle #2" << "\n";
+	cin >> rectW[1];
+
+	cout << "Please enter a height for rectangle #2" << "\n";
+	cin >> rectH[1];
+
+	rectV[1] = rectL[1] * rectW[1] * rectH[1];
+
+	int m = sizeof(rectV) / sizeof(rectV[0]);
+
+	sort(rectV, rectV + m);
+
+	rectDiff = rectV[1] - rectV[0];
+
+	cout << "The difference between the volume of the two rectangles is " << rectDiff << "\n";
+
+	system("PAUSE");
+
+	//Project D: Write a program that accepts the price of three
+	//different items, and calculates the subtotal, taxes at 10%,
+	//and total for the items.
+	cout << "Fourth game!" << "\n";
+
+	double userNum[3], taxRate, tax, subTotal, total;
+	taxRate = .10;
+
+	cout << "Please enter the price of the first item:" << "\n";
+	cin >> userNum[0];
+	cout << "Please enter the price of the second item:" << "\n";
+	cin >> userNum[1];
+	cout << "Please enter the price of the third item:" << "\n";
+	cin >> userNum[2];
+
+	subTotal = userNum[0] + userNum[1] + userNum[2];
+	tax = subTotal * taxRate;
+	total = subTotal + tax;
+	cout << "\n" << "Your total after tax is $" << total << "\n";
+
+	system("PAUSE");
+
+	return 0;
+}
